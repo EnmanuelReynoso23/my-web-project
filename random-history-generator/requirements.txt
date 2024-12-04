@@ -1,0 +1,37 @@
+import random
+import pandas as pd
+
+# Define Data Structures
+events = [
+    "discovered fire",
+    "invented the wheel",
+    "established a civilization",
+    "developed agriculture",
+    "wrote the first book",
+    "created a democracy",
+    "explored new lands",
+    "fought a great war",
+    "made a scientific breakthrough",
+    "built a monument"
+]
+
+# Generate Random Events
+def generate_random_events(num_events):
+    return random.sample(events, num_events)
+
+# Create Random History
+def create_random_history(num_events):
+    history_events = generate_random_events(num_events)
+    history = pd.DataFrame(history_events, columns=["Event"])
+    return history
+
+# Display Generated History
+def display_generated_history(history):
+    print("Randomly Generated History:")
+    print(history)
+
+# Example usage
+if __name__ == "__main__":
+    num_events = 5  # Specify the number of random events
+    history = create_random_history(num_events)
+    display_generated_history(history)
